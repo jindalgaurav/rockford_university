@@ -1,0 +1,647 @@
+<html>
+    <head>
+        <title>Bootstrap Demo</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, userscalable=no">
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <script src="js/jquery2-2-0.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="http://maps.google.com/maps/api/js?sensor=false" type="text/javascript"></script>
+        <style>
+            .btn{
+                padding: 8px 20px;
+            }
+            body{
+                background-color : #0099ff;
+                text-align: justify;
+            }
+            #d1{
+                background-color: aliceblue;
+                width: 70%;
+                height: 92%;
+                text-align: justify;
+                padding-left: 30px;
+                padding-right: 30px;
+                padding-top: 10px;
+            }
+        </style>
+        <script>
+            function updateLocation(position)
+            {
+                startPos = position;
+                var latitude = 42;
+                var longitude = 82;
+                
+                //document.getElementById("startLat").innerHTML = latitude;
+                //document.getElementById("startLon").innerHTML = longitude;
+
+                var coords = new google.maps.LatLng(latitude,longitude);
+
+                var mapOptions = { zoom:10,
+                                    center:coords,
+                                    mapTypeControl:false,
+                                    navigationControlOptions:{style:google.maps.NavigationControlStyle.SMALL},
+                                    mapTypeId:google.maps.MapTypeId.ROADMAP
+                                    };
+
+                map = new google.maps.Map(document.getElementById("map_canvas"),mapOptions);
+
+                var marker = new google.maps.Marker({ position:coords,
+                                                        map:map,
+                                                        title:"Your current location!"
+                                                    });
+            }
+
+            function contact(){
+            $("#d1").html(`
+            <div class='row'>
+                <div class='col-lg-7'>
+                    
+                    <h2><img src='r.png' height='100px' width='100px'>ROCKFORD UNIVERSITY</h2>
+                    <pre>
+                5050 East State Street
+                Rockford IL 61108
+                
+                Ph No :  815.240.2408
+                Faculty & Staff Directory
+                Campus Map & Directions
+                Virtual Tour - Visit Campus Today
+                    </pre>
+                </div>
+                <div class='col-lg-5'>
+                    <img src='logo.png' height='300px' width='300px'>
+                </div>
+            </div>
+
+            <div id="map_canvas" style="width:900px;height:275px; padding-top:10px">
+
+            </div>
+                `);
+            updateLocation();
+            }
+
+            function m1(){
+            $("#d123").html(`
+            <p>Dr. Rajesh Kumar</p>
+            <p><b>Professor</b></p>
+            <p><b>Specialization</b></p>
+            <p>Computer Network, Cloud Computing, Software Engineering</p>
+            <p>Email : rakumar@thapar.edu</p>
+            `);
+            }
+            function m2(){
+                $("#d123").html(`
+                <p>Dr. Singara Singh</p>
+                <p><b>Associate Professor</b></p>
+                <p><b>Specialization</b></p>
+                <p>Digital Image Processing, Information Security,Machine Learning</p>
+                <p>Email : singara@thapar.edu</p>
+                `);
+            }
+            function w2(){
+                $("#d123").html(`
+                <p>Dr. Avleen Kaur Malhi</p>
+                <p><b>Assistant Professor</b></p>
+                <p><b>Specialization</b></p>
+                <p>Information security and VANETs</p>
+                <p>Email : avleen@thapar.edu</p>
+                `);
+            }
+            function w1(){
+                $("#d123").html(`
+                <p>Dr. Maninder Kaur</p>
+                <p><b>Associate Professor</b></p>
+                <p><b>Specialization</b></p>
+                <p>Computer Engineering</p>
+                <p>Email : manindersohal@thapar.edu</p>
+                `);
+            }
+            function faculty()
+            {
+                $("#d1").html(`
+                <div class="row" style='padding-bottom:10px;'>
+                    <div class='col-lg-6'>
+                        <h3>FACULTIES</h3>
+                        <p>Teachers have three loves: love of learning, love of learners, and the love of bringing 
+                        the first two loves together. Education is our passport to the future, for tomorrow belongs 
+                        to the people who prepare for it today.</p>
+                        <p>Here are the top-notch faculty members with rich industry experience to hone the best in 
+                        every student.</p>
+                    </div>
+                    <div class='col-lg-6'>
+                        <img src='faculty.jpg' height=200px width=400px style='padding-bottom:10px'>
+                    </div>
+                </div>
+                <div class="row" style='padding-bottom:10px; padding-top:10px'>
+                    <div class='col-lg-4'>
+                        <img src='m1.jpg' height=175px width=250px onclick='m1()' style="border-radius: 100%;">
+                    </div>
+                    <div class='col-lg-4'>
+                        <img src='w1.jpg' height=175px width=250px onclick='w1()' style="border-radius: 100%";>
+                    </div>
+                </div>
+                <div class="row" style='padding-bottom:10px; padding-top:10px'>
+                    <div class='col-lg-4'>
+                        <img src='m2.jpg' height=175px width=250px onclick='m2()' style="border-radius: 100%;">
+                    </div>
+                    <div class='col-lg-4'>
+                        <img src='w2.jpg' height=175px width=250px onclick='w2()' style="border-radius: 100%;">
+                    </div>
+                </div>
+                `);
+            }
+
+            function Mechanical()
+            {
+                $("#r1").html(
+                `
+                <div class='col-lg-4'>
+                    <img src='mech.jpeg' height=200px width=250px>
+                </div>
+                <div class="col-lg-2">
+                    <div class="row"><h3>Subjects</h3></div>
+                    <div class="row">Thermo</div>
+                    <div class="row">Fluids</div>
+                    <div class="row">Solids</div>
+                    <div class="row">Mechanics</div>
+                    <div class="row">Work Study</div>
+                    <div class="row">Refrigeration</div>
+                </div>
+                <div class="col-lg-2">
+                    <div class="row"><h3>Mode</h3></div>
+                    <div class="row">Campus</div>
+                    <div class="row">Online</div>
+                    <div class="row">Campus</div>
+                    <div class="row">Online</div>
+                    <div class="row">Campus</div>
+                    <div class="row">Online</div>
+                </div>
+                <div class="col-lg-2">
+                    <div class="row"><h3>Start Date</h3></div>
+                    <div class="row">10 Oct, 2020</div>
+                    <div class="row">11 Oct, 2020</div>
+                    <div class="row">11 Oct, 2020</div>
+                    <div class="row">10 Oct, 2020</div>
+                    <div class="row">19 Oct, 2020</div>
+                    <div class="row">29 Oct, 2020</div>
+                </div>
+                <div class="col-lg-2">
+                    <div class="row"><h3>Fees</h3></div>
+                    <div class="row">$200</div>
+                    <div class="row">$204</div>
+                    <div class="row">$240</div>
+                    <div class="row">$300</div>
+                    <div class="row">$340</div>
+                    <div class="row">$390</div>
+                </div>`
+                );
+            }
+
+            function CSE()
+            {
+                $("#r1").html(
+                `
+                <div class='col-lg-4'>
+                    <img src='cse.jpeg' height=200px width=250px>
+                </div>
+                <div class="col-lg-2">
+                    <div class="row"><h3>Subjects</h3></div>
+                    <div class="row">C Language</div>
+                    <div class="row">C++</div>
+                    <div class="row">JAVA</div>
+                    <div class="row">Python</div>
+                    <div class="row">MAchine Learning</div>
+                    <div class="row">Data Structures</div>
+                </div>
+                <div class="col-lg-2">
+                    <div class="row"><h3>Mode</h3></div>
+                    <div class="row">Campus</div>
+                    <div class="row">Online</div>
+                    <div class="row">Campus</div>
+                    <div class="row">Online</div>
+                    <div class="row">Campus</div>
+                    <div class="row">Online</div>
+                </div>
+                <div class="col-lg-2">
+                    <div class="row"><h3>Start Date</h3></div>
+                    <div class="row">10 Oct, 2020</div>
+                    <div class="row">11 Oct, 2020</div>
+                    <div class="row">11 Oct, 2020</div>
+                    <div class="row">10 Oct, 2020</div>
+                    <div class="row">19 Oct, 2020</div>
+                    <div class="row">11 Oct, 2020</div>
+                </div>
+                <div class="col-lg-2">
+                    <div class="row"><h3>Fees</h3></div>
+                    <div class="row">$200</div>
+                    <div class="row">$204</div>
+                    <div class="row">$240</div>
+                    <div class="row">$280</div>
+                    <div class="row">$300</div>
+                    <div class="row">$340</div>
+                </div>`
+                );
+            }
+            function Electrical()
+            {
+                $("#r1").html(
+                `
+                <div class='col-lg-4'>
+                    <img src='ele.jpg' height=200px width=250px>
+                </div>
+                <div class="col-lg-2">
+                    <div class="row"><h3>Subjects</h3></div>
+                    <div class="row">Circuits</div>
+                    <div class="row">Thermo</div>
+                    <div class="row">Transistor</div>
+                    <div class="row">Capacitance</div>
+                    <div class="row">Diode Heating</div>
+                    <div class="row">Mantainance</div>
+                </div>
+                <div class="col-lg-2">
+                    <div class="row"><h3>Mode</h3></div>
+                    <div class="row">Campus</div>
+                    <div class="row">Online</div>
+                    <div class="row">Campus</div>
+                    <div class="row">Online</div>
+                    <div class="row">Campus</div>
+                    <div class="row">Online</div>
+                </div>
+                <div class="col-lg-2">
+                    <div class="row"><h3>Start Date</h3></div>
+                    <div class="row">10 Oct, 2020</div>
+                    <div class="row">10 Oct, 2020</div>
+                    <div class="row">19 Oct, 2020</div>
+                    <div class="row">11 Oct, 2020</div>
+                    <div class="row">11 Oct, 2020</div>
+                    <div class="row">11 Oct, 2020</div>
+                </div>
+                <div class="col-lg-2">
+                    <div class="row"><h3>Fees</h3></div>
+                    <div class="row">$200</div>
+                    <div class="row">$204</div>
+                    <div class="row">$340</div>
+                    <div class="row">$240</div>
+                    <div class="row">$280</div>
+                    <div class="row">$300</div>
+                </div>`
+                );
+            }
+
+            function ECE()
+            {
+                $("#r1").html(
+                `
+                <div class='col-lg-4'>
+                    <img src='ece.jpg' height=200px width=250px>
+                </div>
+                <div class="col-lg-2">
+                    <div class="row"><h3>Subjects</h3></div>
+                    <div class="row">Logic Gates</div>
+                    <div class="row">Basic Electronics</div>
+                    <div class="row">IC Design</div>
+                    <div class="row">Circuits</div>
+                    <div class="row">Project Making</div>
+                    <div class="row">Space Cutting</div>
+                </div>
+                <div class="col-lg-2">
+                    <div class="row"><h3>Mode</h3></div>
+                    <div class="row">Campus</div>
+                    <div class="row">Online</div>
+                    <div class="row">Campus</div>
+                    <div class="row">Online</div>
+                    <div class="row">Campus</div>
+                    <div class="row">Online</div>
+                </div>
+                <div class="col-lg-2">
+                    <div class="row"><h3>Start Date</h3></div>
+                    <div class="row">19 Oct, 2020</div>
+                    <div class="row">11 Oct, 2020</div>
+                    <div class="row">11 Oct, 2020</div>
+                    <div class="row">10 Oct, 2020</div>
+                    <div class="row">10 Oct, 2020</div>
+                    <div class="row">11 Oct, 2020</div>
+                </div>
+                <div class="col-lg-2">
+                    <div class="row"><h3>Fees</h3></div>
+                    <div class="row">$340</div>
+                    <div class="row">$240</div>
+                    <div class="row">$280</div>
+                    <div class="row">$200</div>
+                    <div class="row">$204</div>
+                    <div class="row">$300</div>
+                </div>`
+                );
+            }
+            function programs()
+            {
+                $("#d1").html(
+                `
+                <div class="row">
+                    <div class='col-lg-12'>
+                    <img src="acc.jpg" height=200px width=880px>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-7">
+                        <h3>ACADEMIC CATALOGS</h3>
+                        <p>Check out our full course catalog for this academic year as well as for past academic years.</p>
+                        <p>Kindly select the branch with which you want to coninue</p>
+                        <button type="button" class="btn" onclick="Mechanical()">Mechanical</button>
+                        <button type="button" class="btn" onclick="CSE()">Computer Science</button>
+                        <button type="button" class="btn" onclick="Electrical()">Electrical</button>
+                        <button type="button" class="btn" onclick="ECE()">Electronics</button>
+                    </div>
+                    <div class="col-lg-5">
+                        <img src="ac.jpg" height=175px width=350px style="padding-top: 10px">
+                    </div>
+                    </div>
+
+                    
+
+                    <div class="row" id="r1" style="padding-top: 10px; padding-left: 10px; text-align: 'center'">
+                        <img src='othr.jpg' height=200px width=900px>
+                    </div>`);
+            }
+            function NewsLetter()
+            {
+                $("#d1").html(`
+                <div class="row">
+                    <div class="col-lg-8">
+                        <h1>NEWSLETTERS</h1>
+                        <p>The Library of Congress Teaching with Primary Sources Program at Rockford University produces a 
+                        quarterly newsletter that focuses on our program’s events and news. We also highlight important 
+                        information from the Library of Congress.</p>
+                    </div>
+                    <div class="col-lg-4">
+                        <img src='images.jpg' height='150px' width='275px'>
+                    </div>
+                </div>
+                <div class="row" style="padding-top: 10px; padding-bottom: 10px">
+                    <div class="col-lg-8">
+                        <h3>TPS Journal</h3>
+                        <p>The TPS Journal is an online publication created by the Library of Congress Educational Outreach 
+                            Division in collaboration with the TPS Educational Consortium. Published quarterly, each issue focuses 
+                            on pedagogical approaches to teaching with Library of Congress digitized primary sources in K-12 
+                            classrooms.</p>
+                    </div>
+                    <div class="col-lg-4">
+                        <img src='1.jpg' height='200px' width='275px'>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-8">
+                        <h3>TPS Educational Consortium</h3>
+                        <p>Members of the Teaching with Primary Sources (TPS) Educational Consortium assist in the design of the 
+                            TPS program and offer TPS professional development on an ongoing basis, year round. To view a list of 
+                            current Consortium members and their respective states.</p>
+                    </div>
+                    <div class="col-lg-4">
+                        <img src='1.png' height='200px' width='275px'>
+                    </div>
+                </div>
+
+                            `);
+            }
+
+            function Admission()
+            {
+                $("#d1").html(`
+                <div class="container">
+                    <h2>Register Yourself</h2>
+                    <form class="form-horizontal" role="form">
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="name">Name</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="name" style="width:500px" placeholder="Enter user Name">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="fname">Father's Name</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="fname" style="width:500px" placeholder="Enter father's name">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="address">Address</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="address" style="width:500px" placeholder="Enter your address">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputCity" class="col-sm-2 control-label">City</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="inputCity" style="width:500px" placeholder="Enter City">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="inputState">State</label>
+                        <div class="col-sm-10">
+                            <select id="inputState" class="form-control" style="width:500px" >
+                            <option selected>Choose...</option>
+                            <option>California</option>
+                            <option>Texas</option>
+                            <option>Florida</option>
+                            <option>New York</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="inputZip">Zip</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="inputZip" style="width:500px" >
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="inputEmail4">Email</label>
+                        <div class="col-sm-10">
+                            <input type="email" class="form-control" id="inputEmail" style="width:500px" placeholder="Email">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="password">Password</label>
+                        <div class="col-sm-10">
+                            <input type="password" class="form-control" id="password" style="width:500px" placeholder="Enter password">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                                <label>
+                                    <input type="checkbox"> Remember me
+                                </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button type="submit" class="btn btn-default" onclick='setname()'>Submit</button>
+                        </div>
+                    </div>
+                    </form>
+                </div>
+                
+                <div style="top: 3%; left:80%; position:absolute">
+                    <img src="d.png" width=175px height=150px>
+                </div>
+                    `);
+            }
+            function setname(){
+                document.getElementById("nmdiv").innerHTML="Welcome "+document.getElementById("name").value;
+            }
+
+            function home(){
+                $("#d1").html(`
+                <div class="row" style="background-color: beige; padding-bottom: 10px;">
+                    <div class="col-lg-4">
+                        <img src="18.png" height="175px" width="250px">
+                    </div>
+                    <div class="col-lg-8">
+                        <h4>11/03/2011 - Launching the MFA in Filmmaking</h4>
+                        Announcing a unique, 2-year online-brief residency MFA, BFA and Diploma program in
+                        Filmmaking led by award-winning independent producer/director/screenwriter and educator
+                        Wayne Crawford. Program Highlights: A personalized film education for the training of
+                        director/writers/producers. Emphasis on developing the complete filmmaker well versed in
+                        story and story structure. A 10-day residency at our campus in Paris,France. Write, produce
+                        and direct 3 films of your ...
+                    </div>
+                </div>
+                <div class="row" style="padding-top: 10px;">
+                    <div class="col-lg-4" id="d2">
+                        <h4>Welcome !</h4>
+                        <p>Are you looking for a degree that is available fully online, that is going to make an impact in your life and in your job?</p>
+                        <p>Are you looking for something different, modern, truly international yet adapted to you and your culture?</p>
+                        <p> Our mission is to provide the educational experience that fits our students need in any part of the world and contribute to their personal and professional fulfillment.</p>
+                        <p> We provide programs that are flexible in time, that take into account the person's experience and that are affordable. </p>
+                        <p><a href="homepage.html">Click here for detailed course information</a></p>
+                    </div>
+                    <div class="col-lg-8">
+                        <div class="row" style="background-color: white; ">
+                            <div class="col-lg-8">
+                                <h4>Campus Study</h4>
+                                <p>Our on-campus programs allow you to interact with faculty
+                                    and other students during residency periods and complete
+                                    your work, online. It is another flexible solution that
+                                    will certainly enhance your professional life.
+                                </p>
+                            </div>
+                            <div class="col-lg-4" >
+                                <img src="campus.jpg" width="190px" height="130px">
+                            </div>
+                        </div>
+                        <div class="row" style="padding-top: 5px;">
+                            <div class="col-lg-4">
+                                <img src="online.png" width="175px" height="140px">
+                            </div>
+                            <div class="col-lg-8">
+                                <h4>Online Study</h4>
+                                <p>Our online programs allow you to work at your own pace while you
+                                    keep your job and your activities. You can pursue a quality education
+                                    without leaving home. This option is also less costly and available
+                                    in any country in the world where you live.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row" style="padding-top: 5px;">
+                            <h4>Experience the new virtual campus</h4>
+                            <div>
+                                Horizons University is one of the rare few Universities in the world to offer entire
+                                course modules in a virtual campus, along with live presentations from keynote
+                                speakers, facilitating learning, communication and interaction amongst the community.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                `);
+            }
+        </script>
+    </head>
+    <body>
+        <div id='nmdiv' style="display: inline;"></div>
+        <p style="padding-left: 1000px; padding-top: 10px;"><b><i>Education for Everyone Everywhere</i></b></p>
+        <div style=' left:15%; width: 1000px; position: relative;'>
+            <button type="button" class="btn" onclick="home()">Home</button>
+            <button type="button" class="btn" onclick="NewsLetter()">NewsLetter</button>
+            <button type="button" class="btn" onclick="programs()">Programs</button>
+            <button type="button" class="btn" onclick="faculty()">Faculty</button>
+            <button type="button" class="btn" onclick="Admission()">Admission</button>
+            <button type="button" class="btn" onclick="contact()">Contact us</button>
+        </div>
+
+
+        <div id="d1" name="d1" style='top: 1%; left:5%; position: relative;'>
+            <div class="row" style="background-color: beige; padding-bottom: 10px;">
+                <div class="col-lg-4">
+                    <img src="18.png" height="175px" width="250px">
+                </div>
+                <div class="col-lg-8">
+                    <h4>11/03/2011 - Launching the MFA in Filmmaking</h4>
+                    Announcing a unique, 2-year online-brief residency MFA, BFA and Diploma program in
+                    Filmmaking led by award-winning independent producer/director/screenwriter and educator
+                    Wayne Crawford. Program Highlights: A personalized film education for the training of
+                    director/writers/producers. Emphasis on developing the complete filmmaker well versed in
+                    story and story structure. A 10-day residency at our campus in Paris,France. Write, produce
+                    and direct 3 films of your ...
+                </div>
+            </div>
+            <div class="row" style="padding-top: 10px;">
+                <div class="col-lg-4" id="d2">
+                    <h4>Welcome !</h4>
+                    <p>Are you looking for a degree that is available fully online, that is going to make an impact in your life and in your job?</p>
+                    <p>Are you looking for something different, modern, truly international yet adapted to you and your culture?</p>
+                    <p> Our mission is to provide the educational experience that fits our students need in any part of the world and contribute to their personal and professional fulfillment.</p>
+                    <p> We provide programs that are flexible in time, that take into account the person's experience and that are affordable. </p>
+                    <p><a href="homepage.html">Click here for detailed course information</a></p>
+                </div>
+                <div class="col-lg-8">
+                    <div class="row" style="background-color: white; ">
+                        <div class="col-lg-8">
+                            <h4>Campus Study</h4>
+                            <p>Our on-campus programs allow you to interact with faculty
+                                and other students during residency periods and complete
+                                your work, online. It is another flexible solution that
+                                will certainly enhance your professional life.
+                            </p>
+                        </div>
+                        <div class="col-lg-4" >
+                            <img src="campus.jpg" width="190px" height="130px">
+                        </div>
+                    </div>
+                    <div class="row" style="padding-top: 5px;">
+                        <div class="col-lg-4">
+                            <img src="online.png" width="175px" height="140px">
+                        </div>
+                        <div class="col-lg-8">
+                            <h4>Online Study</h4>
+                            <p>Our online programs allow you to work at your own pace while you
+                                keep your job and your activities. You can pursue a quality education
+                                without leaving home. This option is also less costly and available
+                                in any country in the world where you live.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row" style="padding-top: 5px;">
+                        <h4>Experience the new virtual campus</h4>
+                        <div>
+                            Horizons University is one of the rare few Universities in the world to offer entire
+                            course modules in a virtual campus, along with live presentations from keynote
+                            speakers, facilitating learning, communication and interaction amongst the community.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="d11" name="d11" style='top: 15%; left:80%; position: absolute; background-color: rgb(210, 255, 196); padding-left: 10px; padding-right: 10px;'>
+                <h4>Online Learning Portal</h4>
+                <form>
+                User:<br>
+                <input type="text"><br>
+                Password: <br>
+                <input type="password">
+                <br>
+                <a href="#">Forget your Details?</a>
+                <input type="button" value="Login">
+                </form>
+        </div>
+        <div id="d123" style='top: 60%; left:50%; width: 300px; position: absolute;background-color: white; padding-left: 10px; padding-right: 10px;'>
+        
+        </div>
+    </body>             
+</html>

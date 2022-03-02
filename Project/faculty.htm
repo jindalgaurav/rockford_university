@@ -1,0 +1,91 @@
+<html>
+<head>
+	<title>Bootstrap Demo</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, userscalable=no">
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<script src="js/jquery2-2-0.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    
+
+    <script>
+        function m1(){
+            $("#d123").html(`
+            <p>Dr. Rajesh Kumar</p>
+            <p>Professor</p>
+            <p><b>Specialization</b></p>
+            <p>Computer Network, Cloud Computing, Software Engineering</p>
+            <p>Email : rakumar@thapar.edu</p>
+            `);
+        }
+        function m2(){
+            $("#d123").html(`
+            <p>Dr. Singara Singh</p>
+            <p>Associate Professor</p>
+            <p><b>Specialization</b></p>
+            <p>Digital Image Processing, Information Security,Machine Learning</p>
+            <p>Email : singara@thapar.edu</p>
+            `);
+        }
+        function w2(){
+            $("#d123").html(`
+            <p>Dr. Avleen Kaur Malhi</p>
+            <p>Assistant Professor</p>
+            <p><b>Specialization</b></p>
+            <p>Information security and VANETs</p>
+            <p>Email : avleen@thapar.edu</p>
+            `);
+        }
+        function w1(){
+            $("#d123").html(`
+            <p>Dr. Maninder Kaur</p>
+            <p>Associate Professor</p>
+            <p><b>Specialization</b></p>
+            <p>Computer Engineering</p>
+            <p>Email : manindersohal@thapar.edu</p>
+            `);
+        }
+
+    </script>
+
+
+</head>
+<body>
+
+
+
+
+<div class="row">
+    <div class='col-lg-4'>
+        <h3>FACULTIES</h3>
+        <p>Top-notch faculty members with rich industry experience to hone the best in every student.</p>
+    </div>
+    <div class='col-lg-4'>
+        <img src='faculty.jpg' height=200px width=250px>
+    </div>
+</div>
+<div class="row">
+    <div class='col-lg-4'>
+        <img src='m1.jpg' height=200px width=250px onclick='m1()' style="border-radius: 100%;">
+    </div>
+    <div class='col-lg-4'>
+        <img src='w1.jpg' height=200px width=250px onclick='w1()' style="border-radius: 100%";>
+    </div>
+</div>
+<div class="row">
+    <div class='col-lg-4'>
+        <img src='m2.jpg' height=200px width=250px onclick='m2()' style="border-radius: 100%;">
+    </div>
+    <div class='col-lg-4'>
+        <img src='w2.jpg' height=200px width=250px onclick='w2()' style="border-radius: 100%;">
+    </div>
+</div>
+
+<div id="d123" style='top: 75%; left:80%; position: absolute;background-color: white; padding-left: 10px; padding-right: 10px;'>
+        
+</div>
+
+
+
+	
+</body>
+</html>
